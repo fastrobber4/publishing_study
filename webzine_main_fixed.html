@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>webzine_main_fixed</title>
+
+		<style>
+
+		/*reset*/
+		*{margin: 0; padding: 0;}
+		body{font-size: 12px; color: #666; font-family:dotum, "돋움", Arial, Helvetica, sans-serif;}
+		ul, ol, li{list-style:none;}
+		img{vertical-align: top;}
+		a{text-decoration:none; color:inherit;}
+		a:link{text-decoration:none;}
+		a:visited{text-decoration:none;}
+		a:hover{color: red;}
+
+		/*body lay out*/
+		#wrap{border: 1px red solid; width:1400px; height: 1650px; margin: 0 auto;}
+		.top{width:980px; height:250px; margin: 0 auto;}
+		.main_banner{margin: -9px auto; width: 1400px;}
+		.middle{width: 980px; height:1247px; margin: -9px auto;}
+		.bottom{width: 980px; height: 153px; margin: 0 auto;}
+
+		/*top lay out*/
+		.top_t{background-color: #d2d2d2; border-bottom-width: 1px; border-bottom-color: #a6a6a6; border-bottom-style: solid; height: 40px;}
+		.top_m{height: 140px;}
+		.top_b{height: 95px; position: relative; top: -40px;}
+
+		/*logo, top box, search*/
+		.top_m>a{position: relative; top: 50px}
+		.box{width:280px; height: 24px;  border-top:1px solid; border-left:1px solid; margin-top: 8px}
+		.search, .box{float: right;}
+		.search{height: 48px; margin-left: 11px}
+
+		/*top banner detail*/
+		.top_banner{width: 280px; height: 100px; overflow: hidden; float: right; position: relative; top: 29px; left: 120px}
+		.top_banner ul{margin-top:15px;}
+		.top_banner ul>li>a>img{float: left; position: relative; top: -25px; left: -9px}
+		.top_banner ul>li>h3{font-size: 13px; position: relative; top: 20px; color:#77c3cf; font-weight: bold;}
+		.top_banner ul>li>p{font-size: 10px; margin-top:10px; position: relative; line-height: 138%;}
+		.top_banner ul>li>div{float: right; clear: right; position: relative; top: -65px; margin-top: 2px;}
+		.top_banner ul>li:first-child{position: relative; left:-1px}
+		.bluegreen{color:#77c3cf; text-decoration: underline; font-weight: bold; position: relative; left:3px; top:-1px;}
+
+		/*top_b menu detail*/
+		.menu{height:100px; position:absolute; font-size: 10px; margin-top:27px;}
+		.menu>ul>li{float: left; color: black; position: relative; margin-right: 73px; font-size: 12px; margin-top: 6px}
+		.menu>ul>li>div{width: 980px; height:35px; background-color: #00b2c7; margin-top:12px; display: none; position:absolute; margin-left: -603px; border-top-color: black; border-top-style: solid; border-top-width: 6px;}
+		.menu>ul>li:hover div{display: block;}
+		.menu>ul>li>div>ul>li{float: left; position: relative; left: 191px; top:9px;}
+		.menu>ul>li>div>ul>li>ul{position: absolute; width: 300px; display:none;}
+		.menu>ul>li>div>ul>li>ul>li{float: left; position:relative; top: -18px;}
+		.menu>ul>li>div>ul>li:hover ul,
+		.menu>ul>li.on>div{display: block;}
+		.menu>ul>li:first-child{margin-right: 74px;}
+		.menu>ul>li:first-child+li{margin-right: 72px;}
+		.menu>ul>li:first-child+li+li{margin-right: 76px;}
+		.menu>ul>li:first-child+li+li+li{margin-right: 80px;}
+		.menu>ul>li>div>ul:first-child li{margin-right:49px;}
+		.menu>ul>li>div>ul:first-child li+li{margin-right:42px;}
+		.menu>ul>li>div>ul:first-child li+li+li{margin-right:57px;}
+		.menu>ul>li>div>ul>li>ul{background-image: url"images/blackbar.png"; left: 5px; margin-top: 5px}
+
+		/*middle detail*/
+		.main_banner{height: 300px; width: 1400px;}
+		.middle_t{height: 404px;}
+		.middle_b{height: 495px;}
+
+		/*middle_b slide_banner*/
+		.slide_banner{width:360px; height:400px; position:relative; background: black;}
+		.slide_banner button{position:absolute; z-index:1; top: 168px; background: black; border: 0}
+		.slide_banner button.next{left:6px}
+		.slide_banner button.prev{right:6px;}
+		.slide_banner ul>li>div>img{width: 290px; height: 350px; margin-top:10px}
+		.slide_banner li {width:310px; margin: 0 25px; position:absolute; top:0; text-align:center; display:none;}
+		.slide_banner li.on{display:block}
+		.slide_banner div{height:220px;}
+		.slide_banner li p{margin-top: 150px; color:#FFF}
+
+		/*etc*/
+		.main_banner li>div{position: relative; top: -25px; left: 520px;}
+		.bar_t{position: relative; left: 729px; top: 12px}
+		.main_banner>ul>li:first-child div+div>img{position: relative; top: -290px; left: 350px}
+
+
+		/*.mmb{position:relative; top: -981px}
+		.mmlb{border: 1px red solid; width: 690px; height: 405px; float: left; position:relative; left:210px; top:25px;}
+		.mmltb ul{width:900px; height:210px; position: relative;}
+		.mmltb ul li{float: left; margin-right: 10px;}
+		.mmlbb ul{width:900px; height:210px; position: relative;}
+		.mmlbb ul li{float: left; margin-right: 10px;}
+		.mmrb{float: right; position: relative; }
+		.mmrbb ul{width:500px; height:210px; position: relative;}
+		.mmrbb ul li{float: left; margin-right: 10px;}*/
+
+		.middle_lb{float: left;}
+		.middle_rb{float: right;}
+
+		.middle_ltb,
+		.middle_lbb{width: 700px; height: 170px; margin-top: 33px;}
+		.middle_ltb>ul>li,
+		.middle_lbb>ul>li{float: left; position: relative; left: 1px; margin-right: 8px; text-align: center;}
+		.middle_ltb>a,
+		.middle_lbb>a{margin-bottom:11px;}
+		.navy{color: #494f65;}
+
+		.middle_lbb{margin-top: 20px;}
+
+
+
+		</style>
+
+
+
+	</head>
+
+	<body>
+
+		<div id="wrap">
+
+			<div class="top">
+				<div class="top_t">
+					<img src="images/search.png" alt="검색" class="search">
+					<input type="box" value"#" class="box">
+				</div>
+					<div class="top_banner">
+						<ul>
+							<li>
+								<a href="#"><img alt="" src="images/event_area_img.png"></a>
+								<h3><a href="#"><strong>Event Area</strong></a></h3><br />
+								<p><a href="#">예쁜 아이콘과 함께<br />
+									이 곳에 이벤트를 넣는 것은<br />
+									어떨까요?!</a><a href="#" class="bluegreen">view</a>
+								</p>
+								<div><img alt="" src="images/doton.png"></div>
+							</li>
+							<li>
+								<div><img alt="" src="images/dotoff.png"></div>
+							</li>
+							<li>
+								<div><img alt="" src="images/dotoff.png"></div>
+							</li>
+							<li>
+								<div><img alt="" src="images/dotoff.png"></div>
+							</li>
+						</ul>
+
+
+
+				</div>
+
+				<div class="top_m">
+
+					<a href="#"><img alt="logo" src="images/cube_bridge_logo.png"></a>
+
+				</div>
+
+				<div class="top_b">
+
+					<div class="menu">
+						<ul>
+							<li><a href="#"><img alt="" src="images/creators.png"></a></li>
+							<li><a href="#"><img alt="" src="images/portfolio-box.png"></a></li>
+							<li><a href="#"><img alt="" src="images/product_place.png"></a></li>
+							<li><a href="#"><img alt="" src="images/event.png"></a></li>
+							<li class="on"><a href="#"><img alt="" src="images/webzine.png"></a>
+								<div>
+									<ul>
+										<li><a href="#"><img alt="" src="images/img1.png"></a></li>
+										<li><a href="#"><img alt="" src="images/img2.png"></a>
+											<ul>
+												<span><img alt="" src="images/blackbar.png"></span>
+												<li><a href="#"><img alt="" src="images/best_portfolio.png"></a></li>
+												<li><a href="#"><img alt="" src="images/hot_issue.png"></a></li>
+											</ul>
+										</li>
+										<li><a href="#"><img alt="" src="images/img3.png"></a></li>
+										<li><a href="#"><img alt="" src="images/img4.png"></li>
+									</ul>
+								</div>
+							<li><img alt="" src="images/main_bar2.png" class="bar_t"></li>
+							</li>
+						</ul>
+					</div>
+
+
+				</div>
+
+			</div>
+
+			<div class="main_banner">
+
+				<a href="#"><img alt="메인 이미지" src="images/main_img03.png"></a>
+				<ul>
+					<li>
+						<div>
+							<a href="#"><img alt="dotoff" src="images/dotoff.png"></a>
+							<a href="#"><img alt="doton" src="images/doton.png"></a>
+							<a href="#"><img alt="dotoff" src="images/dotoff.png"></a>
+							<a href="#"><img alt="dotoff" src="images/dotoff.png"></a>
+						</div>
+						<div>
+							<img alt="" src="images/main_bar.png">
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="middle">
+
+				<div class="middle_t">
+					<div class="middle_lb">
+						<div class="middle_ltb">
+							<a href="#"><img alt="" src="images/creator's_cover_story.png"></a>
+								<ul>
+									<li><a href="#"><img src="images/cover_story_img01.png" alt="">
+										<p><strong class="navy">[Fatdoo]</strong><br />
+											사랑은 음악을 타고 총총</p>
+									</a></li>
+									<li><a href="#"><img src="images/cover_story_img02.png" alt="">
+										<p><strong class="navy">[Fatdoo]</strong><br />
+											고냥이 얼굴보다 크잖아</p>
+									</a></li>
+									<li><a href="#"><img src="images/cover_story_img03.png" alt="">
+										<p><strong class="navy">[Fatdoo]</strong><br />
+											이쁜 꽃 백합인가요</p>
+									</a></li>
+									<li><a href="#"><img src="images/cover_story_img04.png" alt="">
+										<p><strong class="navy">[Fatdoo]</strong><br />
+											와인잔에 막걸리를</p>
+									</a></li>
+								</ul>
+						</div>
+
+							<div class="middle_lbb">
+								<a href="#"><img alt="" src="images/creator's_hot_issues.png"></a>
+									<ul>
+										<li><a href="#"><img src="images/cover_story_img05.png" alt="">
+											<p>Design Star와 함께<br />
+												하는 이색 데이트</p>
+										</a></li>
+										<li><a href="#"><img src="images/cover_story_img06.png" alt="">
+											<p>파란 스타킹과 함께<br />
+												하는 이색 데이트</p>
+										</a></li>
+										<li><a href="#"><img src="images/cover_story_img07.png" alt="">
+											<p>Design Star와 함께<br />
+												하는 이색 데이트</p>
+										</a></li>
+										<li><a href="#"><img src="images/cover_story_img08.png" alt="">
+											<p>Design Star와 함께<br />
+												하는 이색 데이트</p>
+										</a></li>
+									</ul>
+							</div>
+						</div>
+
+							<!-- <div class="mmrb">
+
+								<div class="mmrtb">
+									<ul>
+										<li><a href="#"><img src="images/big_video.png" alt="big video"></a></li>
+									</ul>
+								</div>
+
+								<div class="mmrbb">
+									<ul>
+										<li><a href="#"><img src="images/small_video.png" alt="small video"></a></li>
+										<li><a href="#"><img src="images/small_video.png" alt="small video"></a></li>
+										<li><a href="#"><img src="images/small_video.png" alt="small video"></a></li>
+									</ul>
+								</div>
+							</div> -->
+
+						</div>
+
+					</div>
+
+
+				</div>
+				<div class="middle_b">
+
+					<div class="slide_banner">
+
+				        <button class="next"><img src="images/left_direction.png" alt="prev"></button>
+				        <button class="prev"><img src="images/right_direction.png" alt="next"></button>
+				        <ul>
+				            <li class="on">
+				                <div><img src="images/cover_story_img09.png" alt="slide_image" /></div>
+				                <p>Bag - Design Product</p>
+				            </li>
+				            <li>
+				                <div><img src="" alt="" /></div>
+				                <p></p>
+				            </li>
+				            <li>
+				                <div><img src="" alt="" /></div>
+				                <p></p>
+				            </li>
+				        </ul>
+
+				  </div>
+
+			</div>
+
+			<div class="bottom"></div>
+
+		</div>
+
+
+	</body>
+</html>
