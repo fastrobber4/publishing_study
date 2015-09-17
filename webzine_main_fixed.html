@@ -8,18 +8,15 @@
 
 		/*reset*/
 		*{margin: 0; padding: 0;}
-		body{font-size: 12px; color: #666; font-family:dotum, "돋움", Arial, Helvetica, sans-serif;}
+		body{font-size: 12px; color: #666; font-family: dotum, "돋움", Arial, Helvetica, sans-serif;}
 		ul, ol, li{list-style:none;}
 		img{vertical-align: top;}
-		a{text-decoration:none; color:inherit;}
-		a:link{text-decoration:none;}
-		a:visited{text-decoration:none;}
-		a:hover{color: red;}
+		a{text-decoration:none;}
 
 		/*body lay out*/
 		#wrap{border: 1px red solid; width:100%; height: 1629px; margin: 0 auto;}
 		.top{width:980px; height:250px; margin: 0 auto;}
-		.main_banner{margin: -9px auto; width: 100%;}
+		.main_banner{margin: 0 252px; width: 100%;}
 		.middle{width: 980px; height:1247px; margin: 0 auto;}
 		.bottom{width: 980px; height: 153px; margin: -30px auto}
 
@@ -45,7 +42,7 @@
 		.bluegreen{color:#77c3cf; text-decoration: underline; font-weight: bold; position: relative; left:3px; top:-1px;}
 
 		/*top_b menu detail*/
-		.menu{height:100px; position:absolute; font-size: 10px; margin-top:27px;}
+		.menu{height:100px; position:absolute; font-size: 10px; margin-top:35px;}
 		.menu>ul>li{float: left; color: black; position: relative; margin-right: 73px; font-size: 12px; margin-top: 6px}
 		.menu>ul>li>div{width: 980px; height:35px; background-color: #00b2c7; margin-top:12px; display: none; position:absolute; margin-left: -603px; border-top-color: black; border-top-style: solid; border-top-width: 6px;}
 		.menu>ul>li:hover div{display: block;}
@@ -66,13 +63,13 @@
 
 		/*middle layout*/
 		.main_banner{height: 300px; width: 100%;}
-		.main_banner>div>a>img{float: right; position: relative; left: -545px; top: -235px}
+		.main_banner>div>a>img{float: right; position: relative; left: -1047px; top: -235px}
 		.middle_t{height: 449px; background-color: #e7e7e7;}
 		.middle_b{height: 495px;}
 
 		/*middle_b slide_banner*/
 		.slide_banner02{width:360px; height:400px; position:relative; background: black;}
-		.slide_banner02 button{position:absolute; z-index:1; top: 168px; background: black; border: 0}
+		.slide_banner02 button{position:absolute; z-index:1; top: 168px; background: black; border: 0; background-color: transparent;}
 		.slide_banner02 button.next{left:6px}
 		.slide_banner02 button.prev{right:6px;}
 		.slide_banner02 ul>li>div>img{width: 290px; height: 350px; margin-top:10px}
@@ -126,7 +123,7 @@
 
 		/*slide_banner detail*/
 		.slide_banner01{clear: right; margin-top: 8px}
-		.slide_banner01 button{position:absolute; top:20%; border: 0;}
+		.slide_banner01 button{position:absolute; top:20%; border: 0; background-color: transparent;}
 		.slide_banner01 button.next{left: -15px}
 	    .slide_banner01 button.prev{right: 81px;}
 	    .slide_banner01{width:348px; height:107px; position:relative; top: 25px; }
@@ -138,6 +135,10 @@
 		/*bottom detail*/
 		.bottom_t{background-color: #e7e7e7; height: 95px}
 		.bottom_b{background-color: #12151f; height: 58px}
+
+		/*side background*/
+		.top-left{float: left; position: relative; left: 252px;}
+		.top-right{float: right; position: relative; left: -252px;}
 
 
 
@@ -151,6 +152,11 @@
 
 		<div id="wrap">
 
+			<div class="top_side">
+				<span class="top-left"><img alt="" src="images/top-left.png"></span>
+				<span class="top-right"><img alt="" src="images/top-right.png"></span>
+			</div>
+
 			<div class="top">
 				<div class="top_t">
 					<img src="images/search.png" alt="검색" class="search">
@@ -160,7 +166,7 @@
 						<ul>
 							<li>
 								<a href="#"><img alt="" src="images/event_area_img.png"></a>
-								<h3><a href="#"><strong>Event Area</strong></a></h3><br />
+								<h3><a href="#"><span>Event Area</span></a></h3><br />
 								<p><a href="#">예쁜 아이콘과 함께<br />
 									이 곳에 이벤트를 넣는 것은<br />
 									어떨까요?!</a><a href="#" class="bluegreen">view</a>
@@ -241,25 +247,30 @@
 
 			<div class="middle">
 
+				<div class="middle_t_side">
+					<span class="middle_t_side"><img alt="" src="images/middle_t_side.png"></span>
+					<span class="middle_t_side"><img alt="" src="images/middle_t_side.png"></span>
+				</div>
+
 				<div class="middle_t">
 					<div class="middle_lb">
 						<div class="middle_ltb">
 							<a href="#"><img alt="" src="images/creator's_cover_story.png"></a>
 								<ul>
 									<li><a href="#"><img src="images/cover_story_img01.png" alt="">
-										<p><strong class="text01">[Fatdoo]</strong><br />
+										<p><span class="text01">[Fatdoo]</span><br />
 											사랑은 음악을 타고 총총</p>
 									</a></li>
 									<li><a href="#"><img src="images/cover_story_img02.png" alt="">
-										<p><strong class="text01">[Fatdoo]</strong><br />
+										<p><span class="text01">[Fatdoo]</span><br />
 											고냥이 얼굴보다 크잖아</p>
 									</a></li>
 									<li><a href="#"><img src="images/cover_story_img03.png" alt="">
-										<p><strong class="text01">[Fatdoo]</strong><br />
+										<p><span class="text01">[Fatdoo]</span><br />
 											이쁜 꽃 백합인가요</p>
 									</a></li>
 									<li><a href="#"><img src="images/cover_story_img04.png" alt="">
-										<p><strong class="text01">[Fatdoo]</strong><br />
+										<p><span class="text01">[Fatdoo]</span><br />
 											와인잔에 막걸리를</p>
 									</a></li>
 								</ul>
@@ -298,7 +309,7 @@
 
 								<span><img alt="" src="images/cubebridge_vd.png"></span><br />
 								<div><img alt="" src="images/big_video.png"></div><br/>
-								<a href="#"><p><strong class="text02">Video Clip's Name</strong><br />
+								<a href="#"><p><span class="text02">Video Clip's Name</span><br />
 											Video Clip's Name Video Clip's Name...!!!</p></a>
 
 							</div>
@@ -328,6 +339,11 @@
 								</div>
 							</div>
 						</div>
+				</div>
+
+				<div class="middle_b_side">
+					<span class="middle_b_side"><img alt="" src="images/middle_b_side.png"></span>
+					<span class="middle_b_side"><img alt="" src="images/middle_b_side.png"></span>
 				</div>
 
 				<div class="middle_b">
@@ -361,22 +377,22 @@
 							<a href="#"><img alt="" src="images/creator_festival.png"></a>
 							<ul>
 								<li><a href="#"><img src="images/cover_story_img10.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
 								<li><a href="#"><img src="images/cover_story_img11.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
 								<li><a href="#"><img src="images/cover_story_img12.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
 								<li><a href="#"><img src="images/cover_story_img13.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
@@ -387,22 +403,22 @@
 						<div class="middle_b_b">
 							<ul>
 								<li><a href="#"><img src="images/cover_story_img14.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
 								<li><a href="#"><img src="images/cover_story_img15.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
 								<li><a href="#"><img src="images/cover_story_img17.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
 								<li><a href="#"><img src="images/cover_story_img18.png" alt="">
-									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<p><span class="text01">2013 유나이티드 큐브</span><br />
 									<span class="text03">잠실실내체육관</span><br />
 										2013/02/14</p>
 								</a></li>
@@ -415,8 +431,27 @@
 
 			<div class="bottom">
 
-				<div class="bottom_t"></div>
-				<div class="bottom_b"></div>
+				<div class="bottom_t_side">
+					<span class="bottom_t_side"><img alt="" src="images/bottom_t_side.png"></span>
+					<span class="bottom_t_side"><img alt="" src="images/bottom_t_side.png"></span>
+				</div>
+
+				<div class="bottom_t">
+					<span>Talent Association</span>
+					<p>Korean Culture를 만들어 가는 것은 여러분입니다. 다양한 분야의 단체들이 한국의 문화를 후원합니다.</p>
+					<button class="left_b"><img alt="" src="images/left_b.png"></button>
+					<button class="right_b"><img alt="" src="images/right_b.png"></button>
+					<a href=""><img alt="" src="images/bottom_logo.png"></a>
+				</div>
+
+				<div class="bottom_b_side">
+					<span class="bottom_b_side"><img alt="" src="images/bottom_b_side.png"></span>
+					<span class="bottom_b_side"><img alt="" src="images/bottom_b_side.png"></span>
+				</div>
+
+				<div class="bottom_b">
+					<span><img alt="" src="images/copyright.png"></span>
+				</div>
 
 			</div>
 
