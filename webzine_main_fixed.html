@@ -17,13 +17,13 @@
 		a:hover{color: red;}
 
 		/*body lay out*/
-		#wrap{border: 1px red solid; width:1400px; height: 1650px; margin: 0 auto;}
+		#wrap{border: 1px red solid; width:100%; height: 1629px; margin: 0 auto;}
 		.top{width:980px; height:250px; margin: 0 auto;}
-		.main_banner{margin: -9px auto; width: 1400px;}
-		.middle{width: 980px; height:1247px; margin: -9px auto;}
-		.bottom{width: 980px; height: 153px; margin: 0 auto;}
+		.main_banner{margin: -9px auto; width: 100%;}
+		.middle{width: 980px; height:1247px; margin: 0 auto;}
+		.bottom{width: 980px; height: 153px; margin: -30px auto}
 
-		/*top lay out*/
+		/*top layout*/
 		.top_t{background-color: #d2d2d2; border-bottom-width: 1px; border-bottom-color: #a6a6a6; border-bottom-style: solid; height: 40px;}
 		.top_m{height: 140px;}
 		.top_b{height: 95px; position: relative; top: -40px;}
@@ -51,7 +51,8 @@
 		.menu>ul>li:hover div{display: block;}
 		.menu>ul>li>div>ul>li{float: left; position: relative; left: 191px; top:9px;}
 		.menu>ul>li>div>ul>li>ul{position: absolute; width: 300px; display:none;}
-		.menu>ul>li>div>ul>li>ul>li{float: left; position:relative; top: -18px;}
+		.menu>ul>li>div>ul>li>ul>li{float: left; position:relative; top: -18px;  left: 18px}
+		.menu>ul>li>div>ul>li>ul>li+li{margin-left: -32px;}
 		.menu>ul>li>div>ul>li:hover ul,
 		.menu>ul>li.on>div{display: block;}
 		.menu>ul>li:first-child{margin-right: 74px;}
@@ -63,50 +64,80 @@
 		.menu>ul>li>div>ul:first-child li+li+li{margin-right:57px;}
 		.menu>ul>li>div>ul>li>ul{background-image: url"images/blackbar.png"; left: 5px; margin-top: 5px}
 
-		/*middle detail*/
-		.main_banner{height: 300px; width: 1400px;}
-		.middle_t{height: 404px;}
+		/*middle layout*/
+		.main_banner{height: 300px; width: 100%;}
+		.main_banner>div>a>img{float: right; position: relative; left: -545px; top: -235px}
+		.middle_t{height: 449px; background-color: #e7e7e7;}
 		.middle_b{height: 495px;}
 
 		/*middle_b slide_banner*/
-		.slide_banner{width:360px; height:400px; position:relative; background: black;}
-		.slide_banner button{position:absolute; z-index:1; top: 168px; background: black; border: 0}
-		.slide_banner button.next{left:6px}
-		.slide_banner button.prev{right:6px;}
-		.slide_banner ul>li>div>img{width: 290px; height: 350px; margin-top:10px}
-		.slide_banner li {width:310px; margin: 0 25px; position:absolute; top:0; text-align:center; display:none;}
-		.slide_banner li.on{display:block}
-		.slide_banner div{height:220px;}
-		.slide_banner li p{margin-top: 150px; color:#FFF}
+		.slide_banner02{width:360px; height:400px; position:relative; background: black;}
+		.slide_banner02 button{position:absolute; z-index:1; top: 168px; background: black; border: 0}
+		.slide_banner02 button.next{left:6px}
+		.slide_banner02 button.prev{right:6px;}
+		.slide_banner02 ul>li>div>img{width: 290px; height: 350px; margin-top:10px}
+		.slide_banner02 li {width:310px; margin: 0 25px; position:absolute; top:0; text-align:center; display:none;}
+		.slide_banner02 li.on{display:block}
+		.slide_banner02 div{height:220px;}
+		.slide_banner02 li p{margin-top: 150px; color:#FFF}
 
-		/*etc*/
+		/*main_banner detail*/
 		.main_banner li>div{position: relative; top: -25px; left: 520px;}
 		.bar_t{position: relative; left: 729px; top: 12px}
 		.main_banner>ul>li:first-child div+div>img{position: relative; top: -290px; left: 350px}
 
-
-		/*.mmb{position:relative; top: -981px}
-		.mmlb{border: 1px red solid; width: 690px; height: 405px; float: left; position:relative; left:210px; top:25px;}
-		.mmltb ul{width:900px; height:210px; position: relative;}
-		.mmltb ul li{float: left; margin-right: 10px;}
-		.mmlbb ul{width:900px; height:210px; position: relative;}
-		.mmlbb ul li{float: left; margin-right: 10px;}
-		.mmrb{float: right; position: relative; }
-		.mmrbb ul{width:500px; height:210px; position: relative;}
-		.mmrbb ul li{float: left; margin-right: 10px;}*/
-
+		/*middle detail*/
 		.middle_lb{float: left;}
 		.middle_rb{float: right;}
-
 		.middle_ltb,
 		.middle_lbb{width: 700px; height: 170px; margin-top: 33px;}
 		.middle_ltb>ul>li,
-		.middle_lbb>ul>li{float: left; position: relative; left: 1px; margin-right: 8px; text-align: center;}
-		.middle_ltb>a,
-		.middle_lbb>a{margin-bottom:11px;}
-		.navy{color: #494f65;}
-
+		.middle_lbb>ul>li{float: left; position: relative; left: 1px; margin-right: 8px; text-align: center; line-height: 125%;}
+		.middle_lbb{position: relative; top: 14px;}
+		.middle_ltb>ul,
+		.middle_lbb>ul{margin-top: 11px;}
+		.middle_ltb>ul>li>a{color: #888888;}
+		.middle_ltb>ul>li>a>img,
+		.middle_lbb>ul>li>a>img{margin-bottom: 10px}
 		.middle_lbb{margin-top: 20px;}
+		.text01{color: #494f65;}
+		.more1{float: right; position: relative; left: -15px; top: -190px}
+		.middle_rb{position: relative; top: -400px; left: 87px}
+		.middle_rtb>div{position: relative; top: 10px}
+		.middle_rtb a>p{font-size: 9px; color: #888888;}
+		.text02{font-size: 11px; color: #494f65;}
+		.middle_rtb a{text-align: center; position: relative; top: 8px;}
+		.middle_rtb{width: 262px; position:relative; left: -2px}
+		.middle_b_lb{margin-top: 31px;}
+		.middle_b_lb>a>img{margin-bottom: 11px;}
+		.middle_b_lb{width: 360px; height: 425px; }
+		.middle_b_rb{width:630px; height: 430px; float: right; position: relative; top: -425px; left:43px}
+		.middle_b_t ul>li,
+		.middle_b_b ul>li{float: left; font-size: 11px; color: #888888;}
+		.text03{color: #8ea8b5; font-size: 11px;}
+		.middle_b_t>a>img{margin-bottom: 9px;}
+		.middle_b_t ul>li,
+		.middle_b_b ul>li{margin-right: 16px; text-align: center;}
+		.more2{position: relative; left: 552px; top: -219px}
+		.middle_b_t ul>li>a>img{margin-bottom: 9px;}
+		.middle_b_t ul>li>a>p,
+		.middle_b_b ul>li>a>p{line-height: 157%}
+		.middle_b_b{position: relative; top: -7px}
+
+		/*slide_banner detail*/
+		.slide_banner01{clear: right; margin-top: 8px}
+		.slide_banner01 button{position:absolute; top:20%; border: 0;}
+		.slide_banner01 button.next{left: -15px}
+	    .slide_banner01 button.prev{right: 81px;}
+	    .slide_banner01{width:348px; height:107px; position:relative; top: 25px; }
+	    .slide_banner01 .wrap{width: 300px; height:200px; overflow:hidden;}
+	    .slide_banner01 .wrap ul{width:732p}
+	    .slide_banner01 .wrap li{margin-right: -14px; width:100px; height:100px; float:left;}
+	    .slide_banner01 .wrap li p{text-align:center; font-size:11px; margin-top: 11px; margin-right: 17px; color: #888888;}
+
+		/*bottom detail*/
+		.bottom_t{background-color: #e7e7e7; height: 95px}
+		.bottom_b{background-color: #12151f; height: 58px}
 
 
 
@@ -191,8 +222,8 @@
 			</div>
 
 			<div class="main_banner">
-
 				<a href="#"><img alt="메인 이미지" src="images/main_img03.png"></a>
+				<div><a href="#"><img alt="" src="images/m1.png"></a></div>
 				<ul>
 					<li>
 						<div>
@@ -216,22 +247,23 @@
 							<a href="#"><img alt="" src="images/creator's_cover_story.png"></a>
 								<ul>
 									<li><a href="#"><img src="images/cover_story_img01.png" alt="">
-										<p><strong class="navy">[Fatdoo]</strong><br />
+										<p><strong class="text01">[Fatdoo]</strong><br />
 											사랑은 음악을 타고 총총</p>
 									</a></li>
 									<li><a href="#"><img src="images/cover_story_img02.png" alt="">
-										<p><strong class="navy">[Fatdoo]</strong><br />
+										<p><strong class="text01">[Fatdoo]</strong><br />
 											고냥이 얼굴보다 크잖아</p>
 									</a></li>
 									<li><a href="#"><img src="images/cover_story_img03.png" alt="">
-										<p><strong class="navy">[Fatdoo]</strong><br />
+										<p><strong class="text01">[Fatdoo]</strong><br />
 											이쁜 꽃 백합인가요</p>
 									</a></li>
 									<li><a href="#"><img src="images/cover_story_img04.png" alt="">
-										<p><strong class="navy">[Fatdoo]</strong><br />
+										<p><strong class="text01">[Fatdoo]</strong><br />
 											와인잔에 막걸리를</p>
 									</a></li>
 								</ul>
+							<a href="#"><img alt="" src="images/more.png" class="more1"></a>
 						</div>
 
 							<div class="middle_lbb">
@@ -254,58 +286,139 @@
 												하는 이색 데이트</p>
 										</a></li>
 									</ul>
+								<a href="#"><img alt="" src="images/more.png" class="more1"></a>
 							</div>
 						</div>
 
-							<!-- <div class="mmrb">
+						<div class="middle_rb">
 
-								<div class="mmrtb">
-									<ul>
-										<li><a href="#"><img src="images/big_video.png" alt="big video"></a></li>
-									</ul>
+
+
+							<div class="middle_rtb">
+
+								<span><img alt="" src="images/cubebridge_vd.png"></span><br />
+								<div><img alt="" src="images/big_video.png"></div><br/>
+								<a href="#"><p><strong class="text02">Video Clip's Name</strong><br />
+											Video Clip's Name Video Clip's Name...!!!</p></a>
+
+							</div>
+
+							<div class="slide_banner01">
+
+								<button class="next"><img alt="" src="images/left.png"></button>
+							    <button class="prev"><img alt="" src="images/right.png"></button>
+							    <div class="wrap">
+							        <ul>
+							            <li>
+							                <div><img src="images/small_video.png" alt=""></div>
+							                <p>[Bag]<br />
+											Design Star</p>
+							            </li>
+										<li>
+							                <div><img src="images/small_video.png" alt=""></div>
+							                <p>[Bag]<br />
+											Design Star</p>
+							            </li>
+										<li>
+							                <div><img src="images/small_video.png" alt=""></div>
+							                <p>[Bag]<br />
+											Design Star</p>
+							            </li>
+							        </ul>
 								</div>
+							</div>
+						</div>
+				</div>
 
-								<div class="mmrbb">
-									<ul>
-										<li><a href="#"><img src="images/small_video.png" alt="small video"></a></li>
-										<li><a href="#"><img src="images/small_video.png" alt="small video"></a></li>
-										<li><a href="#"><img src="images/small_video.png" alt="small video"></a></li>
-									</ul>
-								</div>
-							</div> -->
+				<div class="middle_b">
 
+					<div class="middle_b_lb">
+						<a href="#"><img alt="" src="images/best.png"></a>
+						<div class="slide_banner02">
+
+					        <button class="next"><img src="images/left_direction.png" alt="prev"></button>
+					        <button class="prev"><img src="images/right_direction.png" alt="next"></button>
+					        <ul>
+					            <li class="on">
+					                <div><img src="images/cover_story_img09.png" alt="slide_image" /></div>
+					                <p>Bag - Design Product</p>
+					            </li>
+					            <li>
+					                <div><img src="" alt="" /></div>
+					                <p></p>
+					            </li>
+					            <li>
+					                <div><img src="" alt="" /></div>
+					                <p></p>
+					            </li>
+					        </ul>
+					    </div>
+					</div>
+
+					<div class="middle_b_rb">
+
+						<div class="middle_b_t">
+							<a href="#"><img alt="" src="images/creator_festival.png"></a>
+							<ul>
+								<li><a href="#"><img src="images/cover_story_img10.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+								<li><a href="#"><img src="images/cover_story_img11.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+								<li><a href="#"><img src="images/cover_story_img12.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+								<li><a href="#"><img src="images/cover_story_img13.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+							</ul>
+							<a href="#"><img alt="" src="images/more.png" class="more2"></a>
 						</div>
 
+						<div class="middle_b_b">
+							<ul>
+								<li><a href="#"><img src="images/cover_story_img14.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+								<li><a href="#"><img src="images/cover_story_img15.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+								<li><a href="#"><img src="images/cover_story_img17.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+								<li><a href="#"><img src="images/cover_story_img18.png" alt="">
+									<p><strong class="text01">2013 유나이티드 큐브</strong><br />
+									<span class="text03">잠실실내체육관</span><br />
+										2013/02/14</p>
+								</a></li>
+							</ul>
+						</div>
 					</div>
 
 
-				</div>
-				<div class="middle_b">
-
-					<div class="slide_banner">
-
-				        <button class="next"><img src="images/left_direction.png" alt="prev"></button>
-				        <button class="prev"><img src="images/right_direction.png" alt="next"></button>
-				        <ul>
-				            <li class="on">
-				                <div><img src="images/cover_story_img09.png" alt="slide_image" /></div>
-				                <p>Bag - Design Product</p>
-				            </li>
-				            <li>
-				                <div><img src="" alt="" /></div>
-				                <p></p>
-				            </li>
-				            <li>
-				                <div><img src="" alt="" /></div>
-				                <p></p>
-				            </li>
-				        </ul>
-
-				  </div>
-
 			</div>
 
-			<div class="bottom"></div>
+			<div class="bottom">
+
+				<div class="bottom_t"></div>
+				<div class="bottom_b"></div>
+
+			</div>
 
 		</div>
 
