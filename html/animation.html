@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        .box{width:100px; height:100px; border:1px #F00 solid;
+      -webkit-animation: movie 10s;
+      animation: movie 1s infinite;
+    }
+    /*
+    -webkit-@keyframes movie{
+      from{background:#F00}
+      to{background:#000; margin-left:1200px; transform: rotate(250deg); border-radius: 50%; margin-top:100px;}
+    }
+
+
+    @keyframes movie{
+      from{background:#F00}
+      to{background:#000;margin-left:1200px; transform: rotate(250deg); border-radius: 50%;margin-top:100px;}
+    }
+
+    */
+
+
+    @keyframes movie{
+      from{background:#F00}
+      to{background:#000;margin-left:1200px; transform: rotate(250deg); border-radius: 50%;margin-top:100px;}
+    }
+
+    @keyframes movie{
+     0%{margin-left:100px}
+    10%{background-color:#F00;transform: rotate(250deg)}
+    20%{background-color:#000;border-radius: 20%}
+    40%{margin-left:100px; margin-top:100px;}
+    50%{background-color:#F0F; transform: rotate(200deg)}
+    60%{background-color:#FF0 ;transform: rotate(-200deg)}
+    80%{margin-top:100px; margin-left:0; border-radius: 40%}
+    90%{margin-left:0px; margin-top:0;box-shadow: 2px 2px 2px 000}
+    100%{margin-left:100px; background:#FFF}
+   }
+
+    </style>
+</head>
+<body>
+<div class="box">
+
+
+</div>
+</body>
+</html>
