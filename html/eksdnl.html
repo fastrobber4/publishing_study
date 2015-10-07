@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{margin:0; padding:0}
+    ul{list-style: none}
+    li{
+        border:1px #F00 solid;
+        width:16.66666666666667%;
+        height:200px;
+        float:left;
+        box-sizing: border-box;
+        padding:5px;
+    }
+    @media screen and (max-width:900px) {
+        li{width:33.33333333333333%;}
+    }
+
+    @media screen and (max-width:600px) {
+        li{width:50%;}
+    }
+    @media screen and (max-width:480px) {
+        li{width:100%;}
+    }
+    div{height:100%; border:1px #F00 solid;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+    </ul>
+</body>
+</html>
