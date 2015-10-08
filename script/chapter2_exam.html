@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script>
+	 	var userName = "장기하"; // 이름입력해
+	 	var ranData = Math.random() * 1000; // 날자 1000중아하나 골라넣어
+	 	var completData = Math.floor(ranData); // 고른 숫자 정수 만들어
+	 	var first_data = completData; // 날자 만들어넣어
+
+
+	 	var text = ["헤어진다","차인다","버려진다","깨진다"];
+	 	
+		ranData = Math.random() * text.length;
+	 	completData = Math.floor(ranData);
+	 	var second_data = completData;
+	 	var masg = userName +"는(은) "+ first_data;
+    
+	 	document.write(masg + " 일뒤에 "+text[second_data]);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
