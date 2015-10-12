@@ -32,11 +32,23 @@
 
     function menuCheck(chk){
         if(chk){
-            alert('지금 그럼 내가 메뉴를 골라주지')
+
+        alert('지금 그럼 내가 메뉴를 골라주지');
+        var menuList = ["아메리카노","카페라때","캬라멜마키야또","초코쉐이크","빅맥","와퍼","KFC치킨","맥주","막걸리","아이스크림","하겐다즈","스타벅스 자바초코칩프라프치노 자바칩추가 토핑 샷추가 벤티","피냉면 가장매운맛","엽떡"]
+        var ranNum = randoms(menuList.length);
+        alert(userName +"\n "+ menuList[ranNum] + "\n"+ "이것을 드셔야합니다!");
+
         }else if(!chk){
             alert('그럼 공부나 계속하시게')
         }
     }
+
+    function randoms(x){
+        return Math.floor(Math.random() * len)
+    }
+
+
+
 
 
 
