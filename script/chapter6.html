@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        var scoreTable = {
+            mags:"",
+            init:function(){
+                var userName = prompt("이름을 입력하세요");
+                var userScore = prompt("점수를 입력하세요");
+
+                var text = ""
+                text += userName + "님의 점수는<br />"
+                text += userScore + "입니다<br />"
+                text += "등급:"+this.calculator(userScore)+"<br />"
+                text += this.masg
+                document.write(text)
+            },
+            calculator:function(sc){
+                if(100 >= sc && 80 <= sc){
+                    this.masg = "참잘했어요! 좋겟네요.."
+                    return "수"
+                }else if(79 >= sc && 60 <= sc){
+                    this.masg = "남들하는 만큼하셧네요.."
+                    return "우"
+                }else if(59 >= sc && 40 <= sc){
+                    this.masg = "원래 반타치는게 더힘들어요"
+                    return "미"
+                }else if(39 >= sc && 20 <= sc){
+                    this.masg = "부모님한테 맞을준비하세요"
+                    return "양"
+                }else if(19 >= sc && 0 <= sc){
+                    this.masg = "집에 못들어가시겠어요"
+                    return "가"
+                }else{
+                    return "올바른 값이 아닙니다"
+                }
+            }
+        }
+
+        scoreTable.init()
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
