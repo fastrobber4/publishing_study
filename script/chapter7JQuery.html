@@ -7,7 +7,7 @@
 
     <script>
 
-    $(document).ready(function(){
+    jQuery(document).ready(function(){
 
 
         var scoreTable ={
@@ -24,23 +24,47 @@
                 var avg = 0;
 
                 for(i in this.userPeopleArr){
-                    //console.log("arr값:"+this.userScoreArr[i])
-
                     avg += Number(this.userScoreArr[i])
-                    //console.log("누적값:"+avg)
                 }
-                //console.log("총합:"+avg)
 
                 return avg/this.userPeopleArr.length
+            },
+            printTable:function(){
+                var tableTag = ""
+                tableTag += "<table>";
+                tableTag += "<tr>";
+                for(i in this.userPeopleArr){
+                    tableTag += "<td>"+this.userPeopleArr[i]+"</td>"
+                }
+                tableTag += "</tr>";
+                tableTag += "<tr>";
+                for(i in this.userPeopleArr){
+                    tableTag += "<td>"+this.userScoreArr[i]+"</td>"
+                }
+                tableTag += "</tr>";
+
+
+                tableTag += "</table>";
+
+                $('.table').html(tableTag)
             }
         }
 
-        $('.adduser').click(function(){
+        jQuery('.adduser').click(function(){
             scoreTable.addUser()
         })
 
-        $('.avgscore').click(function(){
+        jQuery('.avgscore').click(function(){
             $('.avgnum').text("평균점수:"+scoreTable.avge() + "점 입니다.")
+        })
+
+        jQuery('.delete').click(function(){
+            scoreTable.userPeopleArr = []
+            scoreTable.userScoreArr = []
+        })
+
+        jQuery('.ttable').click(function(){
+            scoreTable.printTable()
         })
     })
 
@@ -50,9 +74,13 @@
 
 </head>
 <body>
-    <span class="avgnum"></span>
+
+    <input type="button" value="전원점수출력" class="ttable" />
     <input type="button" value="학생입력" class="adduser" />
+    <input type="button" value="자료삭제" class="delete" />
     <input type="button" value="평균값출력" class="avgscore" />
+    <p class="avgnum"></p>
+    <div class="table"></div>
 
 </body>
 </html>
