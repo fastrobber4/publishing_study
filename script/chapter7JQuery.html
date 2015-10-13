@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+    <script>
+
+    $(document).ready(function(){
+
+        var userPeopleArr = []// 학생
+        var userScoreArr = []//점수
+
+        var scoreTable ={
+            addUser:function(){ // 학생입력
+                var userName = prompt("학생이름을 입력하세요")
+                var userScore = prompt("점수를 입력하세요")
+                userPeopleArr.push(userName);
+                userScoreArr.push(userScore);
+                console.log(userPeopleArr)
+                console.log(userScoreArr)
+            }
+        }
+
+        $('.adduser').click(function(){
+            scoreTable.addUser()
+        })
+    })
+
+
+
+    </script>
+
+</head>
+<body>
+    <input type="button" value="학생입력" class="adduser" />
+
+</body>
+</html>

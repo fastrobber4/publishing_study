@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+    var start = confirm("게임을 시작하시겠습니까?")
+    var userName = null;
+
+    // 최초 게임시작 기능
+    function intro(){
+        alert("그래! 시작하자!");
+        userName = prompt("이름을입력하세요");
+
+        var msg = ""
+        msg += "방갑네 "+userName+" 수업이힘들지?<br />"
+        msg += "그래서 자네를 위해 준비한 게임이있다네<br />"
+        msg += "이름하야 말장난 게임이라네"
+
+        document.write(msg)
+        search()
+    }
+
+    function search(){
+        var checked = confirm("자네 지금 배가 고픈가?")
+
+        menuCheck(checked)
+    }
+
+
+    function menuCheck(chk){
+        if(chk){
+
+        alert('지금 그럼 내가 메뉴를 골라주지');
+        var menuList = ["아메리카노","카페라때","캬라멜마키야또","초코쉐이크","빅맥","와퍼","KFC치킨","맥주","막걸리","아이스크림","하겐다즈","스타벅스 자바초코칩프라프치노 자바칩추가 토핑 샷추가 벤티","피냉면 가장매운맛","엽떡"]
+        var ranNum = randoms(menuList.length);
+        alert(userName +"\n "+ menuList[ranNum] + "\n"+ "이것을 드셔야합니다!");
+
+        }else if(!chk){
+            alert('그럼 공부나 계속하시게')
+        }
+    }
+
+    function randoms(x){
+        return Math.floor(Math.random() * len)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if(start){
+        intro()
+    }else{
+        document.write("꺼져 나도 안내켯어.")
+    }
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    var userName; //유저의 이름
+    var userScore; //점수
+    var masg;
+    userName = prompt("이름을 입력하세요");
+    userScore = prompt("점수을 입력하세요");
+    printLn()
+
+    function lavCheck(sc){
+        if(100 >= sc && 80 <= sc){
+            masg = "참잘했어요! 좋겟네요.."
+            return "수"
+        }else if(79 >= sc && 60 <= sc){
+            masg = "남들하는 만큼하셧네요.."
+            return "우"
+        }else if(59 >= sc && 40 <= sc){
+            masg = "원래 반타치는게 더힘들어요"
+            return "미"
+        }else if(39 >= sc && 20 <= sc){
+            masg = "부모님한테 맞을준비하세요"
+            return "양"
+        }else if(19 >= sc && 0 <= sc){
+            masg = "집에 못들어가시겠어요"
+            return "가"
+        }else{
+            return "올바른 값이 아닙니다"
+        }
+
+    }
+
+    function printLn(){
+        var text = ""
+        text += "이름"+userName+"<br/>"
+        text += userScore+"점입니다.<br />"
+        text += "등급:"+lavCheck(userScore)+"<br/>"
+        text += masg
+
+        document.write(text)
+
+    }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
