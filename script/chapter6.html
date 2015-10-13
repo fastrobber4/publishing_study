@@ -6,11 +6,10 @@
     <script type="text/javascript">
 
         var scoreTable = {
-            mags:"",
+
             init:function(){
                 var userName = prompt("이름을 입력하세요");
                 var userScore = prompt("점수를 입력하세요");
-
                 var text = ""
                 text += userName + "님의 점수는<br />"
                 text += userScore + "입니다<br />"
@@ -20,7 +19,7 @@
             },
             calculator:function(sc){
                 if(100 >= sc && 80 <= sc){
-                    this.masg = "참잘했어요! 좋겟네요.."
+                    this['masg'] = "참잘했어요! 좋겟네요.."
                     return "수"
                 }else if(79 >= sc && 60 <= sc){
                     this.masg = "남들하는 만큼하셧네요.."
@@ -40,8 +39,15 @@
             }
         }
 
-        scoreTable.init()
+        //scoreTable.init()
 
+
+
+        var yyy = {aaa:"aaa"}
+
+
+        yyy['aaaa'] = "ggggg"
+        console.log(yyy)
 
 
 
