@@ -9,22 +9,38 @@
 
     $(document).ready(function(){
 
-        var userPeopleArr = []// 학생
-        var userScoreArr = []//점수
 
         var scoreTable ={
+            userPeopleArr:[],
+            userScoreArr:[],
             addUser:function(){ // 학생입력
                 var userName = prompt("학생이름을 입력하세요")
                 var userScore = prompt("점수를 입력하세요")
-                userPeopleArr.push(userName);
-                userScoreArr.push(userScore);
-                console.log(userPeopleArr)
-                console.log(userScoreArr)
+
+                this.userPeopleArr.push(userName);
+                this.userScoreArr.push(userScore);
+            },
+            avge:function(){
+                var avg = 0;
+
+                for(i in this.userPeopleArr){
+                    //console.log("arr값:"+this.userScoreArr[i])
+
+                    avg += Number(this.userScoreArr[i])
+                    //console.log("누적값:"+avg)
+                }
+                //console.log("총합:"+avg)
+
+                return avg/this.userPeopleArr.length
             }
         }
 
         $('.adduser').click(function(){
             scoreTable.addUser()
+        })
+
+        $('.avgscore').click(function(){
+            $('.avgnum').text("평균점수:"+scoreTable.avge() + "점 입니다.")
         })
     })
 
@@ -34,7 +50,9 @@
 
 </head>
 <body>
+    <span class="avgnum"></span>
     <input type="button" value="학생입력" class="adduser" />
+    <input type="button" value="평균값출력" class="avgscore" />
 
 </body>
 </html>
