@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+        var randomsFn = {
+            userList:[],
+            foodList:[],
+            priceList:[],
+            userAdd:function(){
+
+                var userName = prompt("이름을 입력하세요","");
+                var foodName = prompt("니가먹고싶은거","");
+                var price = prompt("금액을 입력하세요","");
+
+                this.userList.push(userName)
+                this.foodList.push(foodName)
+                this.priceList.push(price)
+            },
+            randoms:function(x){
+                return Math.floor(Math.random() * x.length)
+            },
+            print:function(){
+                var ranNum =  this.randoms(this.userList)
+
+                var text = "";
+
+                text += this.userList[ranNum]+"님 걸리셨어요<br/>"
+                text += this.foodList[ranNum]+"이거먹어야해요<br/>"
+                text += "총금액은:"+this.sum(this.priceList[ranNum],this.userList.length)+"입니다. 이꽉께물고 준비하세요."
+                $('.veiw').html(text)
+            },
+            sum:function(x,y){
+                return (Number(x) * Number(y)) +"원"
+            }
+
+        }
+
+        $('.add').click(function(){
+            randomsFn.userAdd()
+        })
+        
+        $('.print').click(function(){
+            randomsFn.print()
+        })
+
+    })
+
+
+    </script>
+</head>
+<body>
+    <button class="add">인원추가</button>
+    <button class="print">출력</button>
+    <div class="veiw">
+
+
+    </div>
+
+
+</body>
+</html>
