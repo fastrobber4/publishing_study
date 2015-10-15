@@ -12,6 +12,7 @@
 
             if(start){
                 var ranNum = Math.floor(Math.random()*100)
+                console.log(ranNum)
                 this.inputer(ranNum)
             }else{
                 alert('나도안해')
@@ -25,13 +26,17 @@
 
             for(i=0;i<count;i++){
 
-                var userNum = prompt("숫자를 입력하주세요")
+
 
                 if(x > userNum){
+
                     alert('그것보다 커~!')
+
                 }else if(x < userNum){
+
                     alert('그것보다 작아!')
                 }else if(x == userNum){
+
                     alert('헐퀴!!! 정답: ' + x)
                     break
                 }else{
@@ -58,5 +63,10 @@
 </head>
 <body>
     <button class="aa">시작~</button>
+
+    <div class="put">
+        <input type="text"><button>입력</button>
+    </div>
+    
 </body>
 </html>
