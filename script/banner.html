@@ -10,25 +10,63 @@
     <script>
 
     $(document).ready(function(){
-        var idx = 0
-        $('.next').click(function(){ //넥스트 클릭하면 실행해
-            $('.slide li').eq(idx).animate({
-                //슬라이드클래스안에 엘아이 잡아다가 idx번째해당하는 놈한테 에니메이션줘
 
-                left:"-100%"//왼쪽으로 -100% 만큼이동해
-            }).next().css({//다음놈 잡아다가 css 줘
-                'display':'block', //눈에보이게하고
-                'left':"100%" //오른쪽에다가 살포시 가따놔.
+
+        var ran = Math.floor(Math.random() * $('.slide li').length)
+
+        $('.slide li').eq(ran).addClass('on').css('display','block')
+        numOver()
+
+
+        var inter = setInterval(function(){
+
+            $('.next').trigger('click')
+        },3000)
+
+            // .hover(function(){//오버
+            // },function(){//아웃
+            // })
+
+        $('.slide ul').hover(function(){
+            clearInterval(inter)
+        },function(){
+            inter = setInterval(function(){
+
+                $('.next').trigger('click')
+            },3000)
+        })
+
+
+        function numOver(){
+            var idx = $('.slide li.on').index();
+            $('.controll button').eq(idx).addClass('on').siblings().removeClass('on')
+        }
+
+
+
+
+        $('.next').click(function(){
+            numOver()
+            var itemWidth = $('.slide ul').width()
+            $('.slide li.on').stop().animate({
+                left:-itemWidth
+            }).removeClass('on').next().addClass('on')
+            .css({
+                'display':'block',
+                'left':itemWidth
             }).stop().animate({
-                'left':'0'
+                left:0
             })
-            idx+=1
 
-            if(idx == $('.slide li').size()){
-                idx=0;
 
-                $('.slide li').eq(idx).css('left','100%')
-                .stop().animate({
+
+
+            var itemHtml = $('.slide li.on').html()
+
+            if(itemHtml == undefined){
+                $('.slide li').first().addClass('on').css({
+                    left:itemWidth
+                }).stop().animate({
                     left:0
                 })
             }
@@ -37,31 +75,9 @@
 
 
 
-        $('.prev').click(function(){ //넥스트 클릭하면 실행해
-            $('.slide li').eq(idx).animate({
-                //슬라이드클래스안에 엘아이 잡아다가 idx번째해당하는 놈한테 에니메이션줘
 
-                left:"100%"//왼쪽으로 -100% 만큼이동해
-            }).prev().css({//다음놈 잡아다가 css 줘
-                'display':'block', //눈에보이게하고
-                'left':"-100%" //오른쪽에다가 살포시 가따놔.
-            }).stop().animate({
-                'left':'0'
-            })
-            idx-=1
 
-            if(idx < 0){
-                idx= $('.slide li').size()-1;
 
-                $('.slide li').eq(idx).css({
-                    'display':'block',
-                    'left':'-100%'
-                })
-                .stop().animate({
-                    left:0
-                })
-            }
-        })
     })
 </script>
 <style>
@@ -69,24 +85,34 @@
     ul{list-style:none;}
     .slide{background:#000; width:485px; margin:0 auto}
     .slide ul{width: 445px;height: 676px;
-        border:1px #F00 solid; position:relative; left:20px;overflow:hidden}
+        border:1px #F00 solid; position:relative; left:20px;}
     .slide li{position:absolute; display: none; left:0}
-    .slide li:first-child{display:block;}
+    .controll{text-align:center}
+    .controll .on{background:#F00}
+
+
     </style>
 
 </head>
 <body>
-
     <div class="slide">
         <button class="next">다음</button>
         <button class="prev">이전</button>
         <ul>
-            <li><img src="images/over.jpg" alt=""></li>
-            <li><img src="images/over.jpg" alt=""></li>
-            <li><img src="images/over.jpg" alt=""></li>
-            <li><img src="images/over.jpg" alt=""></li>
-            <li><img src="images/over.jpg" alt=""></li>
+            <li><img src="images/over.jpg" alt="1"></li>
+            <li><img src="images/over.jpg" alt="2"></li>
+            <li><img src="images/over.jpg" alt="3"></li>
+            <li><img src="images/over.jpg" alt="4"></li>
+            <li><img src="images/over.jpg" alt="5"></li>
         </ul>
+    </div>
+
+    <div class="controll">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
     </div>
 
 
