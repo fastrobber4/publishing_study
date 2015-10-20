@@ -11,6 +11,27 @@
 
     $(document).ready(function(){
 
+        var inter = setInterval(function(){
+
+            $('.next').trigger('click')
+        },3000)
+
+            // .hover(function(){//오버
+            // },function(){//아웃
+            // })
+
+        $('.slide ul').hover(function(){
+            clearInterval(inter)
+        },function(){
+            inter = setInterval(function(){
+
+                $('.next').trigger('click')
+            },3000)
+        })
+
+
+
+
         $('.next').click(function(){
             var itemWidth = $('.slide ul').width()
 
